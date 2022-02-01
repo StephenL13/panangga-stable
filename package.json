@@ -1,0 +1,18 @@
+{
+  "name": "panangga-stable",
+  "version": "1.0.0",
+  "description": "The code for the official bot of PIFC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^15.0.0",
+    "fs": "^0.0.1-security",
+    "node": "^17.4.0"
+  }
+}
