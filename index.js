@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs')
 require('dotenv').config();
 require('http').createServer((req, res) => res.end('The bot is alive!')).listen(3000)
+client.login(process.env.TOKEN);
 // lines of code required above for the bot's core
 
 const intents = new Discord.Intents(32767);
@@ -55,5 +56,3 @@ fs.readdirSync(`./events/`).forEach(file => {
         }
     });
 });
-
-client.login(process.env.TOKEN);
