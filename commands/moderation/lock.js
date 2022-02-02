@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args, prefix) => {
       if (moderator || admin) {
         const lockEmbed = new MessageEmbed()
           .setColor("#FF0000")
-          .setTitle("🔒 Channel is locked!")
+          .setTitle("🔒 Channel is locked.")
           .setDescription(
             "**You are not muted.**\nIt is currently on lockdown, please wait until the staff unlocks this channel."
           )
