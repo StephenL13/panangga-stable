@@ -7,7 +7,11 @@ module.exports.run = async (client, message, args, prefix) => {
     if (moderator || admin) {
       const lockEmbed = new MessageEmbed()
         .setColor("#FF0000")
+<<<<<<< HEAD
         .setTitle("🔐 Channel is unlocked.")
+=======
+        .setTitle("Channel is unlocked.")
+>>>>>>> 604b85a18e13085145c4fec3fc68c42a3182c165
         .setFooter({ text: "© Philippines Is For Christ" });
         message.channel.permissionOverwrites.edit(message.guild.id, {
           SEND_MESSAGES: true,
