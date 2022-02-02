@@ -5,7 +5,7 @@ client.on('ready', () => {
         `for God's Kingdom`,
         `for His Majesty`,
         `for His Eternity`,
-        `over our wretched lives`
+        `Romans 10:9`
     ];
     
     let index = 0;
