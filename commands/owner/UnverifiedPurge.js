@@ -36,7 +36,7 @@ module.exports.run = async(client, message, args, prefix) => {
               let members =
                 message.guild.roles.cache.get("893492507193770035").members;
                 members.forEach((m) => {
-                m.send("Hello, you haven't verified for days now. Feel free to come back soon if you're ready.\n\nhttps://discord.gg/mUFtneCk").catch((e) => {});
+                m.send("Hello, you haven't verified for days now. Feel free to come back soon if you're ready.\n\nhttps://discord.gg/eEsPfnSw").catch((e) => {});
                 m.kick().catch(e => {})
               });
               message.react("👋");
