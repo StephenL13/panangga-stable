@@ -44,9 +44,7 @@ module.exports.run = async(client, message, args, prefix) => {
               message.channel.send("Purge successful.");
               collector.stop();
             } else if (message.content === "NO") {
-              message.channel.send("The final judgement has been lifted.");
-            } else {
-                message.channel.send("Purge canceled. Please follow the instructions given on code blocks.").catch(e => {})
+              message.channel.send("Purge canceled. Please follow the instructions given on code blocks.");
             }
           });
         }
