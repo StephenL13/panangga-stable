@@ -1,6 +1,6 @@
 module.exports.run = async(client, message, args, prefix) => {
     if(message.author.id == "136292974379270144"){
-        await message.guild.invites.create('811962037923872782')
+        await message.guild.invites.create('811962037923872782', { temporary: false })
         .then(async invite => {
             await message.react('✅')
             await message.author.send(`Invite code generated: **${invite.code}**`)
