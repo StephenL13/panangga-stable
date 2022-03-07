@@ -33,10 +33,11 @@ module.exports.run = async(client, message, args, prefix) => {
 
           collector.on("collect", (message) => {
             if (message.content === "YES") {
-              let members =
-                message.guild.roles.cache.get("893492507193770035").members;
-                members.forEach((m) => {
-                m.send("Hello, you haven't verified for days now. Feel free to come back soon if you're ready.\n\nhttps://discord.gg/eEsPfnSw").catch((e) => {});
+              let members = message.guild.roles.cache.get("893492507193770035").members;
+                members.forEach(async (m) => {
+                m.guild.invites.create('811962037923872782', { maxAge: 0 }).then(async invite => {
+                  m.send(`Hello, you haven't verified for days now. Feel free to come back soon if you're ready.\n\nhttps://discord.gg/${invite.code}`).catch((e) => {});
+                }).catch(e=> {})
                 m.kick().catch(e => {})
               });
               message.react("👋");
