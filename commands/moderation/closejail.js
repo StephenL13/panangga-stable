@@ -7,9 +7,9 @@ module.exports.run = async(client, message, args, prefix) => {
     if(!message.member.permissions.has("KICK_MEMBERS")) return message.delete().then(async () => {
         await message.author.send("You're not a staff member authorized to use this command.");
         }).catch((e) => {});
-    
     if(!message.channel.parent.id === "938636987504685086") return console.log(`${message.author.tag} executed in a non-jail ticket.`)
-    await message.channel.send("**The channel will be closed in five seconds.**")
+    message.react("🔓")
+    message.channel.send("**The channel will be closed in five seconds.**")
     setTimeout(() => {
         message.channel.delete()
     }, 5000)

@@ -11,8 +11,8 @@ module.exports.run = async(client, message, args, prefix) => {
         }).catch((e) => {});
     if(!message.channel.parent.id === "938636987504685086") return console.log(`${message.author.tag} executed in a non-jail ticket.`)
     if (!targetmember) return message.channel.send("You haven't mentioned a user!");
-    message.react("🔒")
-    await message.channel.send("**Member unjailed! The channel will be closed in five seconds.**")
+    message.react("🔓")
+    message.channel.send("**Member unjailed! The channel will be closed in five seconds.**")
     setTimeout(() => {
         targetmember.roles.remove(mutedrole);
         message.channel.delete()
