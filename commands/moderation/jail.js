@@ -11,8 +11,11 @@ module.exports.run = async (client, message, args, prefix) => {
         if(!moderatorrole) return message.delete().then(async() => {await message.author.send("You're not a staff member authorized to use this command.")}).catch(e => {})
         if(!targetmember) return message.channel.send("You haven't mentioned a user!")
         if(targetmember.roles.cache.has(mutedrole)) return message.reply("The member has been already jailed!")
-        if(!reason) reason = "No reason given."
+        if(!reason) return message.delete().then(async() => {
+            await message.channel.send("Please enter a reason.")
+        })
         targetmember.roles.add(mutedrole)
+        message.react("🔒")
         let ticketname = targetmember.user.tag
         let jailchannel = await message.guild.channels.create("jail-"+ticketname, {
             type: "GUILD_TEXT",
@@ -31,7 +34,8 @@ module.exports.run = async (client, message, args, prefix) => {
             .setDescription(`👤 **Suspect:** \`${targetmember.user.tag}\`\n🔒 **Reason:** \`${reason}\`\n\n`)
             .setFooter({ text: targetmember.user.id })
             .setColor('#ff0000')
-        jailchannel.send({ content: `${targetmember}`, embeds: [channelembed] })
+        jailchannel.send({ content: `${targetmember}`, embeds: [channelembed] }).catch((e) => {})
+        targetmember.send({ content: `${targetmember}`, embeds: [channelembed] }).catch((e) => {})
     } else {
         message.delete();
         message.author.send('You are not a staff member authorized to use this command.')
