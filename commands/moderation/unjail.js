@@ -9,10 +9,7 @@ module.exports.run = async(client, message, args, prefix) => {
     if(!message.member.permissions.has("KICK_MEMBERS")) return message.delete().then(async () => {
         await message.author.send("You're not a staff member authorized to use this command.");
         }).catch((e) => {});
-    if(!message.channel.parent.id === "938636987504685086") if(!message.channel.parent.id === "938636987504685086") {
-        await message.delete()
-        return console.log(`${message.author.tag} executed in a non-jail ticket.`)
-    } else {
+    if(message.channel.parent.id === "938636987504685086") {
         if (!targetmember) return message.channel.send("You haven't mentioned a user!");
         message.react("🔓")
         message.channel.send("**Member unjailed! The channel will be closed in five seconds.**")
@@ -20,6 +17,9 @@ module.exports.run = async(client, message, args, prefix) => {
             targetmember.roles.remove(mutedrole);
             message.channel.delete()
         }, 5000)
+    } else {
+        await message.delete()
+        return console.log(`${message.author.tag} executed in a non-jail ticket.`)
     }
 }
 
