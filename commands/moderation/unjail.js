@@ -1,7 +1,7 @@
 module.exports.run = async(client, message, args, prefix) => {
     let targetmember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const mutedrole = message.guild.roles.cache.get("815984539456634890");
-    const moderatorrole = message.guild.roles.cache.get("812126006344548412");
+    const moderatorrole = message.guild.roles.cache.has("812126006344548412");
 
     if (!moderatorrole) return message.delete().then(async () => {
         await message.author.send("You're not a staff member authorized to use this command.");

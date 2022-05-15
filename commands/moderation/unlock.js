@@ -3,7 +3,7 @@ module.exports.run = async (client, message, args, prefix) => {
   let moderator = message.member.roles.cache.has("812126006344548412");
   let admin = message.member.roles.cache.has("816344333212713001");
 
-  if(message.member.permissions.has("MANAGE_ROLES")){
+  if(message.member.permissions.has("KICK_MEMBERS")){
     if (moderator || admin) {
       const lockEmbed = new MessageEmbed()
         .setColor("#FF0000")
