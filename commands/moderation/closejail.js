@@ -4,7 +4,7 @@ module.exports.run = async(client, message, args, prefix) => {
     if (!moderatorrole) return message.delete().then(async () => {
         await message.author.send("You're not a staff member authorized to use this command.");
         }).catch((e) => {});
-    if(message.member.permissions.has("KICK_MEMBERS")) return message.delete().then(async () => {
+    if(!message.member.permissions.has("KICK_MEMBERS")) return message.delete().then(async () => {
         await message.author.send("You're not a staff member authorized to use this command.");
         }).catch((e) => {});
     
