@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args, prefix) => {
         topic: "Jail ticket for "+ticketname
     })
     await jailchannel.permissionOverwrites.set([
-        { id: targetmember.id, allow: ["VIEW_CHANNEL", "SEND_MESSAGES"] },
+        { id: targetmember.id, allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY", "SEND_MESSAGES"], deny: ["MANAGE_CHANNELS", "EMBED_LINKS", "ATTACH_FILES", "CREATE_PUBLIC_THREADS", "CREATE_PRIVATE_THREADS", "CREATE_INSTANT_INVITE", "SEND_MESSAGES_IN_THREADS", "MANAGE_THREADS", "MANAGE_MESSAGES", "USE_EXTERNAL_EMOJIS", "USE_EXTERNAL_STICKERS", "USE_APPLICATION_COMMANDS", "MANAGE_WEBHOOKS", "MANAGE_ROLES", "SEND_TTS_MESSAGES"] },
         { id: memberrole.id, deny: ["VIEW_CHANNEL"] },
         { id: moderatorrole.id, allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"] },
         { id: everyone.id, deny: ["VIEW_CHANNEL"] }
