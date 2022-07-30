@@ -24,7 +24,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
             const welcome = new Discord.MessageEmbed()
                 .setColor('GREEN')
                 .setTitle(`Mabuhay! You are now verified.`)
-                .setDescription(`Please proceed to the <#911901688611360768> for the roles. We're glad to be with us for fellowship and deep encouragement of God's Word.\n\nDon't forget to say hi on chat and head off to <#816513331648397318> by letting us know yourself!`)
+                .setDescription(`Please proceed to the <#1002240545730609223> for the roles. We're glad to be with us for fellowship and deep encouragement of God's Word.\n\nDon't forget to say hi on chat and head off to <#816513331648397318> by letting us know yourself!`)
                 .setThumbnail(newMember.user.displayAvatarURL({ dynamic: true }));
             newMember.roles.remove("893492507193770035")
             client.channels.cache.get(`812128142855503932`).send({ content: `${newMember}`, embeds: [welcome] });
